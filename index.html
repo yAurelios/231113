@@ -1,37 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Style Card Desafio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Interactive rating component</title>
 </head>
 
 <body>
-    <div class="father">
-        <div class="card">
-            <div class="div1"><img src="../../231113/images/icon-star.svg" alt=""></div>
-            <div class="div2">
-                <h2>
-                    How did we do?
-                </h2>
+    <div class="card">
+        <div class="card_container">
+            <div class="rating_section">
+                <div class="star_icon">
+                    <img src="../../231113/images/icon-star.svg" alt="star" />
+                </div>
+                <h2 class="title">O que achou do nosso atendimento?</h2>
+                <p class="description">
+                    Informe-nos como nos saímos com sua solicitação de suporte. Todos
+                    Agradecemos o feedback para nos ajudar a melhorar nossa oferta!
+                </p>
+                <div class="ratings">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                </div>
+                <button class="submit_btn">Enviar</button>
             </div>
-            <div class="div3">
-                <h4>
-                    Please let us know we did with your support request. All feedback is appreciated to help us improve our ouffering!
-                </h4>
-            </div>
-            <div class="buttons" id="button1"><h3>1</h3></div>
-            <div class="buttons" id="button2"><h3>2</h3></div>
-            <div class="buttons" id="button3"><h3>3</h3></div>
-            <div class="buttons" id="button4"><h3>4</h3></div>
-            <div class="buttons" id="button5"><h3>5</h3></div>
-            <div class="div9"><h4>SUBMIT</h4>
+            <div class="thank_section hidden">
+                <img src="../231113/images/illustration-thank-you.svg" alt="thank you" />
+                <div class="chip">
+                    <p>Você avaliou com <span id="rate"></span> de 5 estrelas</p>
+                </div>
+                <h2 class="title">Obrigado!</h2>
+                <p class="description">
+                    Agradecemos por dedicar seu tempo para avaliar. Se você precisar mais suporte, não hesite em entrar em contato!
+                </p>
             </div>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>

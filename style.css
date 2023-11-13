@@ -1,93 +1,106 @@
-@import url(https://fonts.google.com/specimen/Overpass);
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
 
 :root {
-    /* ###Primal Colors */
     --orange: hsl(25, 97%, 53%);
-    /* ### Neutral */
     --white: hsl(0, 0%, 100%);
     --lightGrey: hsl(217, 12%, 63%);
     --mediumGrey: hsl(216, 12%, 54%);
     --darkBlue: hsl(213, 19%, 18%);
     --veryDarkBlue: hsl(216, 12%, 8%);
+    --secondary: hsl(213deg, 20%, 22%);
 }
-.father{
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Overpass", sans-serif;
+}
+.hidden {
+    display: none;
+}
+body {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
+    justify-content: center;
+    background-color: var(--veryDarkBlue);
 }
 .card {
-    font-family: 'Overpass', sans-serif;
-    /* ###GRID */
-    display: grid;
-    grid-template-columns: repeat(5, 50px);
-    grid-template-rows: 50px 40px 70px 50px 45px;
-    grid-column-gap: 20px;
-    grid-row-gap: 30px;
-
-    background-color: var(--veryDarkBlue);
-    padding: 30px;
-    border-radius: 25px;
-}
-
-.div1 {
-    border-radius: 50%; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: 1 / 1 / 2 / 2;
     background-color: var(--darkBlue);
+    border-radius: 1rem;
+    width: 350px;
 }
-.div2 {
+.card_container {
+    padding: 2rem;
+}
+.star_icon {
+    background-color: var(--secondary);
+    width: fit-content;
+    padding: 1rem;
     display: flex;
     align-items: center;
-    grid-area: 2 / 1 / 3 / 6;
-    color:var(--white)
-}
-
-.div3 {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    grid-area: 3 / 1 / 4 / 6;
-    color: var(--lightGrey);
-}
-#button1{
-    grid-area: 4 / 1 / 5 / 2;
-}
-#button2{
-    grid-area: 4 / 2 / 5 / 3;
-}
-#button3{
-    grid-area: 4 / 3 / 5 / 4;
-}
-#button4{
-    grid-area: 4 / 4 / 5 / 5;
-}
-#button5{
-    grid-area: 4 / 5 / 5 / 6;
-}
-.buttons{
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--lightGrey);
-    background-color: var(--darkBlue);
-    transition: 0.4s;
+    margin-bottom: 1rem;
 }
-.buttons:hover{
-    transition: 0.5s;
-    background-color: var(--orange);
+.title {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+.description {
+    font-size: 14px;
+    color: var(--mediumGrey);
+    margin-bottom: 1rem;
+}
+.ratings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.ratings span {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    color: var(--mediumGrey);
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.ratings span:hover {
+    background-color: var(--lightGrey);
     color: var(--white);
 }
-.div9 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: 5 / 1 / 6 / 6;
-    border-radius: 25px;
-    background-color: var(--orange);
+.submit_btn {
+    width: 100%;
     color: var(--white);
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--orange);
+    padding: 0.7rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.submit_btn:hover {
+    background-color: var(--white);
+    color: var(--orange);
+}
+.thank_section {
+    text-align: center;
+}
+.chip {
+    background-color: var(--secondary);
+    width: fit-content;
+    margin: 1rem auto;
+    color: var(--orange);
+    font-size: 14px;
+    padding: 0.7rem;
+    border-radius: 2rem;
+}   
+.checked {
+    background-color: var(--orange) !important;
+    color: var(--white) !important;
 }

@@ -1,33 +1,25 @@
-let selectedRating = 0;
-
-function highlightStars(starValue) {
-    const stars = document.querySelectorAll('.star');
-    stars.forEach((star, index) => {
-        if (index < starValue) {
-            star.classList.add('active');
-        } else {
-            star.classList.remove('active');
+const rating_cards = document.querySelectorAll(".ratings span");
+const submit_btn = document.querySelector(".submit_btn");
+const rate_point = document.getElementById("rate");
+const rating_section = document.querySelector(".rating_section");
+const thank_section = document.querySelector(".thank_section");
+let rate = null;
+rating_cards.forEach((rating_card) => {
+    rating_card.addEventListener("click", (e) => {
+        const active = document.querySelector(".checked");
+        if (active) {
+            active.classList.remove("checked");
         }
+        const card = e.target;
+        card.classList.add("checked");
+        rate = e.target.innerText;
+        console.log(rate);
     });
-}
-
-function setRating(starValue) {
-    selectedRating = starValue;
-    highlightStars(starValue);
-}
-
-function submitRating() {
-    if (selectedRating > 0) {
-        const resultElement = document.getElementById('result');
-        resultElement.textContent = `Você avaliou ${selectedRating} estrelas.`;
-    } else {
-        alert('Por favor, selecione uma avaliação antes de enviar.');
+});
+submit_btn.addEventListener("click", () => {
+    if (rate) {
+        rate_point.innerText = rate;
+        rating_section.classList.add("hidden");
+        thank_section.classList.remove("hidden");
     }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const stars = document.querySelectorAll('.star');
-    stars.forEach((star, index) => {
-        star.addEventListener('click', () => setRating(index + 1));
-    });
 });
